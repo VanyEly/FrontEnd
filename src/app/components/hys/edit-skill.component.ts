@@ -21,9 +21,6 @@ export class EditSkillComponent implements OnInit {
     this.skillS.detail(id).subscribe(
       data => {
         this.skill = data;
-      }, err => {
-        alert("Error al modificar");
-        this.router.navigate(['']);
       }
     )
   }
@@ -32,9 +29,6 @@ export class EditSkillComponent implements OnInit {
     const id = this.activatedRouter.snapshot.params['id'];
     this.skillS.update(id, this.skill).subscribe(
       data => {
-        this.router.navigate(['']);
-      }, err => {
-        alert("Error al modificar la skill");
         this.router.navigate(['']);
       }
     )
